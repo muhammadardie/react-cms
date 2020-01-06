@@ -1,0 +1,10 @@
+export { default as Header } from './header/Header';
+export { default as Carousel } from './carousel/Carousel';
+export { default as Service } from './service/Service';
+export { default as Gallery } from './gallery/Gallery';
+export { default as Post } from './post/Post';
+export { default as Testimony } from './testimony/Testimony';
+export { default as Team } from './team/Team';
+export { default as Company } from './company/Company';
+export { default as Info } from './info/Info';
+export { default as Footer } from './footer/Footer';
