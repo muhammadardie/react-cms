@@ -12,9 +12,10 @@ class Blog extends React.Component {
 
   componentDidMount() {
    window.scrollTo(0,0);
+   const API_URL = process.env.REACT_APP_API_URL;
    const promises = Promise.all([
-	  fetch('header/page/blog'),
-      fetch('blog')
+	  fetch(API_URL +'header/page/blog'),
+      fetch(API_URL + 'blog')
 	]);
 
 	promises

@@ -14,12 +14,13 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
+   const API_URL  = process.env.REACT_APP_API_URL;
    const promises = Promise.all([
-	  fetch('carousel'),
-      fetch('gallery'),
-      fetch('service'),
-      fetch('testimony'),
-      fetch('blog'),
+	  fetch(API_URL + 'carousel'),
+      fetch(API_URL + 'gallery'),
+      fetch(API_URL + 'service'),
+      fetch(API_URL + 'testimony'),
+      fetch(API_URL + 'blog'),
 	]);
 
 	promises

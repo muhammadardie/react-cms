@@ -12,9 +12,10 @@ class Work extends React.Component {
 
   componentDidMount() {
    window.scrollTo(0,0);
+   const API_URL = process.env.REACT_APP_API_URL;
    const promises = Promise.all([
-	  fetch('header/page/work'),
-      fetch('gallery')
+	  fetch(API_URL + 'header/page/work'),
+      fetch(API_URL + 'gallery')
 	]);
 
 	promises

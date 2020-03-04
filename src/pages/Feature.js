@@ -11,9 +11,10 @@ class Feature extends React.Component {
 	}
 
 	  componentDidMount() {
+	   const API_URL = process.env.REACT_APP_API_URL;
 	   const promises = Promise.all([
-		  fetch('header/page/feature'),
-	      fetch('service')
+		  fetch(API_URL + 'header/page/feature'),
+	      fetch(API_URL + 'service')
 		]);
 
 		promises

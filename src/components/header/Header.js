@@ -8,7 +8,7 @@ class Header extends React.Component {
         <div className="container">
           <div className="header-inner">
             <h1>
-              <Link to="/">Flew</Link>
+              <Link to="/">CMS</Link>
             </h1>
             <nav role="navigation">
               <ul>

@@ -11,9 +11,10 @@ class Contact extends React.Component {
   }
 
   componentDidMount() {
+   const API_URL = process.env.REACT_APP_API_URL;
    const promises = Promise.all([
-	  fetch('header/page/contact'),
-      fetch('contact')
+	  fetch(API_URL + 'header/page/contact'),
+      fetch(API_URL + 'contact')
 	]);
 
 	promises
