@@ -23,8 +23,7 @@ class Post extends React.Component {
                           <h5 className="date">
                             <span>{  item.createdAt }</span>
                           </h5>
-                          <p>
-                            { item.content }
+                          <p dangerouslySetInnerHTML={{ __html: item.content }}>
                           </p>
                         </div>
                       </div>
