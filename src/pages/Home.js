@@ -16,11 +16,11 @@ class Home extends React.Component {
   componentDidMount() {
    const API_URL  = process.env.REACT_APP_API_URL;
    const promises = Promise.all([
-	  fetch(API_URL + 'carousel'),
-      fetch(API_URL + 'gallery'),
-      fetch(API_URL + 'service'),
-      fetch(API_URL + 'testimony'),
-      fetch(API_URL + 'blog'),
+	  fetch(API_URL + 'carousels'),
+      fetch(API_URL + 'galleries'),
+      fetch(API_URL + 'services'),
+      fetch(API_URL + 'testimonies'),
+      fetch(API_URL + 'blogs'),
 	]);
 
 	promises
@@ -29,11 +29,11 @@ class Home extends React.Component {
 	  )
 	  .then( ([dataCarousel, dataGallery, dataService, dataTestimony, dataBlog]) => {
 	  	this.setState({
-            carouselObj: dataCarousel, 
-            galleryObj: dataGallery,
-            serviceObj: dataService,
-            testimonyObj: dataTestimony,
-            blogObj: dataBlog
+            carouselObj: dataCarousel.data, 
+            galleryObj: dataGallery.data,
+            serviceObj: dataService.data,
+            testimonyObj: dataTestimony.data,
+            blogObj: dataBlog.data
         })
 	  })
 	  .catch((error) => {

@@ -13,8 +13,8 @@ class Contact extends React.Component {
   componentDidMount() {
    const API_URL = process.env.REACT_APP_API_URL;
    const promises = Promise.all([
-	  fetch(API_URL + 'header/page/contact'),
-      fetch(API_URL + 'contact')
+	  fetch(API_URL + 'headers/page/contact'),
+      fetch(API_URL + 'contacts')
 	]);
 
 	promises
@@ -23,8 +23,8 @@ class Contact extends React.Component {
 	  )
 	  .then( ([dataCarousel, dataContact]) => {
 	  	this.setState({
-            carouselObj: dataCarousel, 
-            contactObj: dataContact
+            carouselObj: dataCarousel.data, 
+            contactObj: dataContact.data
         })
 	  })
 	  .catch((error) => {

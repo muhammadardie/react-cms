@@ -13,9 +13,9 @@ class Footer extends React.Component {
   componentDidMount() {
    const API_URL  = process.env.REACT_APP_API_URL;
    const promises = Promise.all([
-      fetch(API_URL + 'about'),
-      fetch(API_URL + 'service'),
-      fetch(API_URL + 'socmed'),
+      fetch(API_URL + 'abouts'),
+      fetch(API_URL + 'services'),
+      fetch(API_URL + 'socmeds'),
   ]);
 
   promises
@@ -24,9 +24,9 @@ class Footer extends React.Component {
     )
     .then( ([dataAbout, dataService, dataSocmed]) => {
       this.setState({
-            aboutObj: dataAbout, 
-            serviceObj: dataService,
-            socmedObj: dataSocmed,
+            aboutObj: dataAbout.data, 
+            serviceObj: dataService.data,
+            socmedObj: dataSocmed.data,
         })
     })
     .catch((error) => {

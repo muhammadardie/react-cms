@@ -14,8 +14,8 @@ class Work extends React.Component {
    window.scrollTo(0,0);
    const API_URL = process.env.REACT_APP_API_URL;
    const promises = Promise.all([
-	  fetch(API_URL + 'header/page/work'),
-      fetch(API_URL + 'gallery')
+	  fetch(API_URL + 'headers/page/work'),
+      fetch(API_URL + 'galleries')
 	]);
 
 	promises
@@ -24,8 +24,8 @@ class Work extends React.Component {
 	  )
 	  .then( ([dataHeader, dataGallery]) => {
 	  	this.setState({
-            headerObj: dataHeader, 
-            galleryObj: dataGallery
+            headerObj: dataHeader.data, 
+            galleryObj: dataGallery.data
         })
 	  })
 	  .catch((error) => {

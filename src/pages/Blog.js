@@ -14,8 +14,8 @@ class Blog extends React.Component {
    window.scrollTo(0,0);
    const API_URL = process.env.REACT_APP_API_URL;
    const promises = Promise.all([
-	  fetch(API_URL +'header/page/blog'),
-      fetch(API_URL + 'blog')
+	  fetch(API_URL +'headers/page/blog'),
+      fetch(API_URL + 'blogs')
 	]);
 
 	promises
@@ -24,8 +24,8 @@ class Blog extends React.Component {
 	  )
 	  .then( ([dataHeader, dataBlog]) => {
 	  	this.setState({
-            headerObj: dataHeader, 
-            blogObj: dataBlog
+            headerObj: dataHeader.data, 
+            blogObj: dataBlog.data
         })
 	  })
 	  .catch((error) => {

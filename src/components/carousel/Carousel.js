@@ -13,7 +13,7 @@ class Carousel extends React.Component {
       arrows: false,
       autoplay: true,
     }
-    const items        = this.props.items;
+    const items        = Array.isArray(this.props.items) ? this.props.items : [this.props.items];
     const path         = this.props.path;
     const itemCarousel = items.map(function(item, index){
       let imageURL = imageUrl[path] + item.image;

@@ -13,8 +13,8 @@ class Feature extends React.Component {
 	  componentDidMount() {
 	   const API_URL = process.env.REACT_APP_API_URL;
 	   const promises = Promise.all([
-		  fetch(API_URL + 'header/page/feature'),
-	      fetch(API_URL + 'service')
+		  fetch(API_URL + 'headers/page/feature'),
+	      fetch(API_URL + 'services')
 		]);
 
 		promises
@@ -23,8 +23,8 @@ class Feature extends React.Component {
 		  )
 		  .then( ([dataCarousel, dataService]) => {
 		  	this.setState({
-	            carouselObj: dataCarousel,
-	            serviceObj: dataService
+	            carouselObj: dataCarousel.data,
+	            serviceObj: dataService.data
 	        })
 		  })
 		  .catch((error) => {

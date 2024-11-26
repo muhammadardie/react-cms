@@ -14,9 +14,9 @@ class About extends React.Component {
   componentDidMount() {
    const API_URL = process.env.REACT_APP_API_URL;
    const promises = Promise.all([
-	  fetch(API_URL + 'header/page/about'),
-      fetch(API_URL + 'company'),
-      fetch(API_URL + 'team'),
+	  fetch(API_URL + 'headers/page/about'),
+      fetch(API_URL + 'companies'),
+      fetch(API_URL + 'teams'),
 	]);
 
 	promises
@@ -25,9 +25,9 @@ class About extends React.Component {
 	  )
 	  .then( ([dataHeader, dataCompany, dataTeam]) => {
 	  	this.setState({
-            headerObj: dataHeader, 
-            companyObj: dataCompany,
-            teamObj: dataTeam
+            headerObj: dataHeader.data, 
+            companyObj: dataCompany.data,
+            teamObj: dataTeam.data
         })
 	  })
 	  .catch((error) => {
