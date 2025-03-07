@@ -21,4 +21,4 @@ Make sure your **echo cms** backend is running and accessible from the frontend.
 
 You can view the live demo of the project here:
 
-[https://react-cms.muhammadardie.tech/](https://react-cms.muhammadardie.tech/)
+[https://react-cms.ardie.web.id/](https://react-cms.ardie.web.id/)
